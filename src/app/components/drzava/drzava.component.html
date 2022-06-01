@@ -1,0 +1,25 @@
+
+<ul class="drzave">
+  <li (click)="dodajNovuDrzavu()">Nova drzava</li>
+  <li *ngFor="let d of drzave">
+    <a  routerLink="/detail/{{d.countryId}}">
+      <span  class="badge"></span> {{d.countryName}}
+    </a>
+    <span id="buttons">
+    <button (click)="deleteDrzavaById(d.countryId)">DELETE</button>
+      <button routerLink="/detail/{{d.countryId}}">Detalji</button>
+    </span>
+  </li>
+</ul>
+
+
+<div *ngIf="selectedDrzava != null" class="addnew">
+  <div>
+    <h2>Dodavanje nove drzave!</h2>
+    <label >Naziv drzave: </label>
+    <input [(ngModel)]="selectedDrzava.countryName" placeholder="name">
+    <button class="normal" (click)="insertCountry(selectedDrzava)" >Sacuvaj</button>
+  </div>
+</div>
+
+
