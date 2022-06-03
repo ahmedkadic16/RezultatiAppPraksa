@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { Drzava } from '../../drzava'
 import { ActivatedRoute } from '@angular/router';
 import {ServisService} from "../../services/servis.service";
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-drzava-edit',
@@ -14,6 +15,7 @@ export class DrzavaEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private servis: ServisService,
+    private location: Location
 
   ) { }
 
@@ -24,6 +26,12 @@ export class DrzavaEditComponent implements OnInit {
     const id=Number(this.route.snapshot.paramMap.get('id'));
     this.servis.getDrzavu(id).subscribe(x=>this.drzava = x);
   }
-
-
+  updateDrzavu(drzava:Drzava){
+    console.log(this.drzava?.countryName);
+    console.log(this.drzava?.countryId);
+    this.servis.updateDrzava(drzava).subscribe(() =>this.goBack());
+  }
+  goBack():void {
+    this.location.back();
+  }
 }

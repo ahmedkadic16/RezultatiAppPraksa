@@ -1,12 +1,17 @@
 <div *ngIf="tim">
   <div>
-    <h3>Detalji o timu: {{tim.teamName}}</h3>
-    <div>
-      <p>Team ID: {{tim.teamId}}</p>
-      <p>Naziv: {{tim.teamName}}</p>
-      <p>Osnovan godine: {{tim.foundedYear}}</p>
-      <p>Grad iz kojeg dolazi: {{tim.city}}</p>
-      <p></p>
-    </div>
+
+      <h3>Tim detalji:</h3>
+      <p>Tim ID: {{tim.teamId}}</p>
+      <span>Naziv tima: </span>
+      <input [(ngModel)]="tim.teamName" placeholder="name"> <br>
+    <span>Osnovan godine: </span>
+    <input [(ngModel)]="tim.foundedYear" placeholder="godina"> <br>
+    <span>Grad :</span>
+    <input [(ngModel)]="tim.city" placeholder="grad"> <br>
+    <span>Drzava id: </span>
+    <input [(ngModel)]="tim.countryId" placeholder="drzavaid"> <br>
+
+      <button (click)="updateTim(tim)">Promijeni podatke o timu</button>
   </div>
 </div>

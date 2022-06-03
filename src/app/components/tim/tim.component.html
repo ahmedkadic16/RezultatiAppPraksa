@@ -3,7 +3,7 @@
   <li *ngFor="let t of timovi">
     <a routerLink="/timDetail/{{t.teamId}}">{{t.teamName}}</a>
     <span id="buttons">
-    <button >DELETE</button>
+    <button (click)="deleteTeam(t.teamId)">DELETE</button>
       <button routerLink="/timDetail/{{t.teamId}}">Detalji</button>
     </span>
   </li>
@@ -15,12 +15,12 @@
     <h2>Dodavanje novog tima!</h2>
     <label >Naziv tima: </label>
     <input [(ngModel)]="selectedTim.teamName" placeholder="naziv"> <br>
-    <label >Godina osnivanja </label>
-    <input [(ngModel)]="selectedTim.foundedYear" placeholder="godina"> <br>
     <label >Grad iz kojeg dolazi</label>
     <input [(ngModel)]="selectedTim.city" placeholder="grad"> <br>
     <label > Trenutno id zemlje treba promijenit na listbox</label>
-    <input [(ngModel)]="selectedTim.countryId" placeholder="drzava">
-    <button class="normal" >Sacuvaj</button>
+    <input [(ngModel)]="selectedTim.countryId" placeholder="drzava"> <br>
+    <label >Godina osnivanja </label>
+    <input [(ngModel)]="selectedTim.foundedYear" placeholder="godina"> <br>
+    <button class="normal" (click)="insertTeam()" >Sacuvaj</button>
   </div>
 </div>

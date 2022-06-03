@@ -5,7 +5,7 @@
     <span>Naziv drzave:</span>
     <input [(ngModel)]="drzava.countryName" placeholder="name">
 
-    <button>Promijeni Naziv</button>
+    <button (click)="updateDrzavu(drzava)">Promijeni Naziv</button>
   </div>
 </div>
 

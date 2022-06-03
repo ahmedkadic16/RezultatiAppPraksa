@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Tim } from '../../tim'
 import { ActivatedRoute } from '@angular/router';
 import {ServisService} from "../../services/servis.service";
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-tim-edit',
@@ -14,6 +15,7 @@ export class TimEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private servis: ServisService,
+    private location: Location
 
   ) { }
 
@@ -24,5 +26,11 @@ export class TimEditComponent implements OnInit {
     const id=Number(this.route.snapshot.paramMap.get('id'));
     this.servis.getTim(id).subscribe(x=>this.tim = x);
   }
-
+  updateTim(tim:Tim){
+    console.log(tim.teamId +" "+ tim.teamName+ " "+tim.foundedYear+" "+ tim.city +" "+ tim.countryId)
+    this.servis.updateTim(tim).subscribe(()=> this.goBack());
+  }
+  goBack():void {
+    this.location.back();
+  }
 }
