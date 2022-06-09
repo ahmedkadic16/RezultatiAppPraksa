@@ -1,9 +1,30 @@
+<div id="Full">
+  <nav id="topMenu">
+    <a href="#"> Home</a>
+    <a routerLink="/drzava">Drzave</a>
+    <a routerLink="/timovi">Timovi</a>
+    <a routerLink="/">Test</a>
+    <a routerLink="/">Test2</a>
+    <a routerLink="/">Test3</a>
+    <a routerLink="/">Test4</a>
+  </nav>
 
-<div>
-  <a routerLink="/drzava">Drzave</a>
-  <a routerLink="/timovi">Timovi</a>
+  <div id="sidenav">
+    <h4>Lista zemalja:</h4>
+    <ul>
+      <li *ngFor="let d of drzave">
+        <p>{{d.countryName}}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div id="main">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div id="footer">
+    <p>Datum: 7.8.2022</p>
+    <p>Contact us at: email@email.com</p>
+    <p>All rights reserved.</p>
+  </div>
 </div>
-
-
-<router-outlet></router-outlet>
-

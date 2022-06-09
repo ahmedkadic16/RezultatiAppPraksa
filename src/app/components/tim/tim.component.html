@@ -1,26 +1,41 @@
-<ul>
-  <li (click)="dodajNoviTim()">Dodaj novi tim</li>
-  <li *ngFor="let t of timovi">
-    <a routerLink="/timDetail/{{t.teamId}}">{{t.teamName}}</a>
-    <span id="buttons">
-    <button (click)="deleteTeam(t.teamId)">DELETE</button>
-      <button routerLink="/timDetail/{{t.teamId}}">Detalji</button>
-    </span>
-  </li>
-</ul>
+<div id="prikaz">
+  <div id="pretragaAdd">
+    <label>Pretrazi: </label>
+    <input name="pretraga " type="text" placeholder="Naziv" />
+    <button (click)="dodajNoviTim()">Dodaj novi tim</button>
+  </div>
 
+  <div id="listAdd">
+    <ul>
+      <li *ngFor="let t of timovi">
+        <a routerLink="/timDetail/{{ t.teamId }}">{{ t.teamName }}</a>
+        <button (click)="deleteTeam(t.teamId)">DELETE</button>
+        <button routerLink="/timDetail/{{ t.teamId }}">Detalji</button>
+      </li>
+    </ul>
 
-<div *ngIf="selectedTim!=null">
-  <div>
-    <h2>Dodavanje novog tima!</h2>
-    <label >Naziv tima: </label>
-    <input [(ngModel)]="selectedTim.teamName" placeholder="naziv"> <br>
-    <label >Grad iz kojeg dolazi</label>
-    <input [(ngModel)]="selectedTim.city" placeholder="grad"> <br>
-    <label > Trenutno id zemlje treba promijenit na listbox</label>
-    <input [(ngModel)]="selectedTim.countryId" placeholder="drzava"> <br>
-    <label >Godina osnivanja </label>
-    <input [(ngModel)]="selectedTim.foundedYear" placeholder="godina"> <br>
-    <button class="normal" (click)="insertTeam()" >Sacuvaj</button>
+    <div *ngIf="selectedTim != null" id="addnew">
+      <div>
+        <h2>Dodavanje novog tima!</h2>
+        <div class="red">
+          <label>Naziv tima: </label>
+          <input [(ngModel)]="selectedTim.teamName" placeholder="naziv" />
+        </div>
+
+        <div class="red">
+          <label>Grad iz kojeg dolazi</label>
+          <input [(ngModel)]="selectedTim.city" placeholder="grad" />
+        </div>
+        <div class="red">
+          <label> Id zemlje</label>
+          <input [(ngModel)]="selectedTim.countryId" placeholder="id" />
+        </div>
+        <div class="red">
+          <label>Godina osnivanja </label>
+          <input [(ngModel)]="selectedTim.foundedYear" placeholder="godina" />
+        </div>
+        <button class="normal" (click)="insertTeam()">Sacuvaj</button>
+      </div>
+    </div>
   </div>
 </div>

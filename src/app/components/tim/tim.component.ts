@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 import {Tim} from "../../tim";
 import {ServisService} from "../../services/servis.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import { catchError, map, tap } from 'rxjs/operators';
+import {TIMOVI} from "../../mock";
+
+
 @Component({
   selector: 'app-tim',
   templateUrl: './tim.component.html',
   styleUrls: ['./tim.component.css']
 })
 export class TimComponent implements OnInit {
-  timovi:Tim[] = [];
+  @Input() lista:Tim[] = [];
+  timovi=TIMOVI;
+  //timovi:Tim[] = [];
   selectedTim:any;
   constructor(public servisServis:ServisService, private route: ActivatedRoute,
               private router: Router) { }
@@ -24,8 +28,8 @@ export class TimComponent implements OnInit {
     this.selectedTim = {
       teamName:"",
       city:"",
-      countryId:0,
-      foundedYear:2021,
+      countryId:null,
+      foundedYear:null,
     }
   }
   insertTeam() {

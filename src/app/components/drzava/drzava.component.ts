@@ -10,7 +10,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./drzava.component.css']
 })
 export class DrzavaComponent implements OnInit {
-  drzave:Drzava[] = [];
+  //drzave:Drzava[] = [];
+ drzave=DRZAVE;
   id:any;
   selectedDrzava?:Drzava;
   constructor(public servisService:ServisService, private route: ActivatedRoute,
@@ -26,7 +27,8 @@ export class DrzavaComponent implements OnInit {
     this.servisService.getDrzave().subscribe(x=>this.drzave=x)
   }
   deleteDrzavaById(id:number) {
-    this.drzave = this.drzave.filter(x=> x.countryId !== id);
+    //this.drzave = this.drzave.filter(x=> x.countryId !== id);
+    console.log("ID - "+ id);
     this.servisService.deleteDrzavaById(id).subscribe();
 
   }

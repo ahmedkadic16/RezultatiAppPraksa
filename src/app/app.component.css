@@ -1,39 +1,84 @@
+#Full {
+  height: 100%;
+  width: 100%;
+  background-image: url('https://cdn.wallpapersafari.com/44/93/z9YJw7.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-div {
-  padding: 20px;
-  margin-top: 10px;
-  margin-bottom: 300px;
+#topMenu {
+  position: absolute;
+  margin: 2% 0% 0% 0%;
+  background-color: rgba(0,0,0,0.30);
+  padding:1% 12% 1% 12%;
+  border-bottom: 1px solid  rgba(70, 145, 187, 0.78);
 }
-div {
-  margin-bottom: 10px;
-  list-style-type: none;
-}
-a {
-  height: 25px;
-
-  margin-right: 0px;
-  border-right: 1px solid #aaa;
-  padding: 0 20px;
-}
-a:last-child {
-  border-right: none;
-}
-a {
+#topMenu a {
   text-decoration: none;
-  color: #ccc;
-  font: 25px/1 Helvetica, Verdana, sans-serif;
-  text-transform: uppercase;
-
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  padding: 3%;
+  font-size: 150%;
+  color:black;
+}
+#topMenu a:hover {
+  border-bottom: 1px solid black;
+  box-shadow: 0 0.5em 0.5em -0.4rem;
+  transform: translateY(-0.25em);
 }
 
-a:hover {
-  color: #666;
+#sidenav {
+  border-right: 1px solid  rgba(70, 145, 187, 0.78);
+  background-color: rgba(169,169,169,0.13);
+  position: absolute;
+  margin-left: 2.5%;
+  width: 10%;
+  height: 86%;
+  top: 13%;
+}
+#sidenav h4 {
+  margin-left: 5%;
+  text-align: center;
+  font-size: 110%;
+}
+#sidenav ul {
+  list-style-type: none;
+  padding: 0px;
+}
+#sidenav li {
+  font-size: 105%;
+  padding: 1%;
+  text-align: center;
+}
+#sidenav li:hover {
+  background-color: rgba(100,159,193,0.55);
+}
+#main {
+  position: absolute;
+  width:87.5%;
+  height: 87%;
+  top: 13%;
+  left:12.5%;
 }
 
-
-
+#footer{
+  position: fixed;
+  display: inline-flex;
+  margin:0px;
+  padding: 0px;
+  color: white;
+  font-size: 60%;
+  width: 100%;
+  top:96%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.71);
+}
+#footer p:first-of-type {
+  margin-left: 2%;
+}
+#footer p:nth-child(2) {
+  position: relative;
+  left: 35%;
+}
+#footer p:nth-child(3) {
+  position: relative;
+  left: 78%;
+}

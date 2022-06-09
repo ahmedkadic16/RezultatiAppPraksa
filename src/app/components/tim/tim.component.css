@@ -1,59 +1,95 @@
-
-ul {
-  counter-reset: li;
-  list-style: none;
-  padding: 0;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+#prikaz {
+  margin: 1% 0% 0% 1%;
+  padding: 0px;
+  height: 93%;
+  width: 97%;
 }
-ul li {
-  display:block;
-  background: #D3D4DA;
-  padding: .4em .4em .4em .8em;
-  margin: .5em 0 .5em 2.5em;
+#pretragaAdd {
+  width: 45%;
+  position: relative;
+  top: 1%;
+  left: 2%;
+  margin-bottom: 2%;
+}
+#pretragaAdd input {
+  background-color: rgba(70, 145, 187, 0.78);
+  padding: 1%;
+  border-radius: 25px;
+  border-color: #457eab;
   width: 30%;
 }
+#pretragaAdd button {
+  position: relative;
+  border-color: #457eab;
+  left: 1%;
+  border-radius: 25px;
+  background-color: rgba(70, 145, 187, 0.78);
+  padding: 1%;
+  width: 45%;
+  font-size: 90%;
+}
+ul {
+  position: relative;
+  top: 2%;
+  left: 2%;
+  padding: 0px;
+  margin: 0px;
+  width: 40%;
+}
+ul li {
+  list-style-type: none;
+  border-bottom: 1px solid #457eab;
+  font-size: 130%;
+  padding: 1%;
+}
 ul a {
-  position: relative;
-  color: #444;
+  width: 30%;
   text-decoration: none;
-  transition: all .3s ease-out;
-
+  color: black;
 }
-button {
-  position: absolute;
-  top:-3px;
-  float:right;
-  font-family: "Open Sans", sans-serif;
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #000;
-  margin-right: 10px;
-  cursor: pointer;
-  border: 1px solid;
-  padding: 0.23em 0.35em;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
-  position: relative;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+ul button {
+  float: right;
+  border-color: #457eab;
+  border-radius: 25px;
+  background-color: rgba(70, 145, 187, 0.78);
+  width: 24.7%;
+  padding: 3px;
+  font-size: 85%;
 }
-li:first-of-type{
+h2 {
   text-align: center;
-  text-decoration: underline;
 }
-.normal {
-  background-color: #4CAF50; /* Green */
-  position: relative;
-  float:none;
-  border: none;
+#addnew {
   color: white;
-  padding: 8px 21px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin-left: 5px;
-  top:1px;
+  width: 40%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 50%;
+  top: 1%;
+  padding: 1% 3% 2% 3%;
+}
+#addnew button {
+  border-color: #457eab;
+  border-radius: 25px;
+  background-color: rgba(70, 145, 187, 0.78);
+  width: 60%;
+  padding: 5px;
+  font-size: 100%;
+  margin-top: 3%;
+  margin-left: 20%;
+  color: black;
+}
+.red {
+  width: 100%;
+  padding: 1%;
+}
+.red input {
+  background-color: rgba(70, 145, 187, 0.78);
+  padding: 1%;
+  border-radius: 25px;
+  border-color: #457eab;
+  width: 50%;
+}
+::placeholder {
+  color:black;
 }

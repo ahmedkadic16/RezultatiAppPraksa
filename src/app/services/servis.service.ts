@@ -18,10 +18,7 @@ export class ServisService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-
-  constructor(
-    private httpKlijent: HttpClient,
-    ) { }
+  constructor(private httpKlijent: HttpClient,) { }
 
   //DRZAVE
   getDrzave(): Observable<Drzava[]> {
@@ -36,7 +33,6 @@ export class ServisService {
   }
   deleteDrzavaById(id:number) {
     return this.httpKlijent.delete(this.drzaveApi+"DeleteCountryById/"+id,this.httpOptions);
-
   }
   insertDrzava(drzava:Drzava): Observable<Drzava> {
     return this.httpKlijent.post<Drzava>(this.drzaveApi+"InsertCountry", drzava,this.httpOptions);
@@ -46,8 +42,9 @@ export class ServisService {
   }
 
 
+
   //TIMOVI
-  getTimovi():Observable<Tim[]> {
+     getTimovi():Observable<Tim[]> {
     return this.httpKlijent.get<Tim[]>(this.timoviApi+"GetAllTeams");
     //const timovi = of(TIMOVI);
     //return timovi;
@@ -66,5 +63,7 @@ export class ServisService {
   updateTim(tim:Tim):Observable<any> {
     return this.httpKlijent.put(this.timoviApi+"UpdateTeam/"+tim.teamId,tim,this.httpOptions)
   }
-
+  getTeamByCountryId(id:number) {
+    return this.httpKlijent.get(this.timoviApi+"GetTeamByCountryId/"+id);
+  }
 }
