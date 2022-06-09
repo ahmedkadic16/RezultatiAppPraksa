@@ -1,11 +1,10 @@
 <div *ngIf="drzava">
   <div>
     <h3>Drzava detalji:</h3>
-    <p>Drzava ID: {{drzava.countryId}}</p>
+    <p>Drzava ID: {{ drzava.countryId }}</p>
     <span>Naziv drzave:</span>
-    <input [(ngModel)]="drzava.countryName" placeholder="name">
+    <input [(ngModel)]="drzava.countryName" placeholder="name" />
 
     <button (click)="updateDrzavu(drzava)">Promijeni Naziv</button>
   </div>
 </div>
-

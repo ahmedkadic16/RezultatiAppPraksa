@@ -1,23 +1,22 @@
 #Full {
   height: 100%;
   width: 100%;
-  background-image: url('https://cdn.wallpapersafari.com/44/93/z9YJw7.jpg');
+  background-image: url("https://cdn.wallpapersafari.com/44/93/z9YJw7.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 #topMenu {
   position: absolute;
   margin: 2% 0% 0% 0%;
-  background-color: rgba(0,0,0,0.30);
-  padding:1% 12% 1% 12%;
-  border-bottom: 1px solid  rgba(70, 145, 187, 0.78);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1% 12% 1% 12%;
+  border-bottom: 1px solid rgba(70, 145, 187, 0.78);
 }
 #topMenu a {
   text-decoration: none;
   padding: 3%;
   font-size: 150%;
-  color:black;
+  color: black;
 }
 #topMenu a:hover {
   border-bottom: 1px solid black;
@@ -26,8 +25,8 @@
 }
 
 #sidenav {
-  border-right: 1px solid  rgba(70, 145, 187, 0.78);
-  background-color: rgba(169,169,169,0.13);
+  border-right: 1px solid rgba(70, 145, 187, 0.78);
+  background-color: rgba(169, 169, 169, 0.13);
   position: absolute;
   margin-left: 2.5%;
   width: 10%;
@@ -49,27 +48,27 @@
   text-align: center;
 }
 #sidenav li:hover {
-  background-color: rgba(100,159,193,0.55);
+  background-color: rgba(100, 159, 193, 0.55);
 }
 #main {
   position: absolute;
-  width:87.5%;
+  width: 87.5%;
   height: 87%;
   top: 13%;
-  left:12.5%;
+  left: 12.5%;
 }
 
-#footer{
+#footer {
   position: fixed;
   display: inline-flex;
-  margin:0px;
+  margin: 0px;
   padding: 0px;
   color: white;
   font-size: 60%;
   width: 100%;
-  top:96%;
+  top: 96%;
   text-align: center;
-  background-color: rgba(0,0,0,0.71);
+  background-color: rgba(0, 0, 0, 0.71);
 }
 #footer p:first-of-type {
   margin-left: 2%;

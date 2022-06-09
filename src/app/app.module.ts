@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DrzavaComponent } from './components/drzava/drzava.component';
 import { DrzavaEditComponent } from './components/drzava-edit/drzava-edit.component';
@@ -8,11 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { TimComponent } from './components/tim/tim.component';
 import { TimEditComponent } from './components/tim-edit/tim-edit.component';
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainviewComponent } from './components/mainview/mainview.component';
-
 
 @NgModule({
   declarations: [
@@ -22,7 +21,7 @@ import { MainviewComponent } from './components/mainview/mainview.component';
     TimComponent,
     TimEditComponent,
     SidebarComponent,
-    MainviewComponent
+    MainviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +31,6 @@ import { MainviewComponent } from './components/mainview/mainview.component';
     BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

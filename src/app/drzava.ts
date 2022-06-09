@@ -1,4 +1,4 @@
 export interface Drzava {
-  countryId:number,
-  countryName:string
+  countryId: number;
+  countryName: string;
 }

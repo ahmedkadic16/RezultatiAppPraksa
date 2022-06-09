@@ -1,36 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import { Tim } from '../../tim'
+import { Tim } from '../../tim';
 import { ActivatedRoute } from '@angular/router';
-import {ServisService} from "../../services/servis.service";
-import { Location } from "@angular/common";
+import { ServisService } from '../../services/servis.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-tim-edit',
   templateUrl: './tim-edit.component.html',
-  styleUrls: ['./tim-edit.component.css']
+  styleUrls: ['./tim-edit.component.css'],
 })
 export class TimEditComponent implements OnInit {
-  tim?:Tim;
+  tim?: Tim;
 
   constructor(
     private route: ActivatedRoute,
     private servis: ServisService,
     private location: Location
-
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.getTim();
   }
-  getTim():void {
-    const id=Number(this.route.snapshot.paramMap.get('id'));
-    this.servis.getTim(id).subscribe(x=>this.tim = x);
+  getTim(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.servis.getTim(id).subscribe((x) => (this.tim = x));
   }
-  updateTim(tim:Tim){
-    console.log(tim.teamId +" "+ tim.teamName+ " "+tim.foundedYear+" "+ tim.city +" "+ tim.countryId)
-    this.servis.updateTim(tim).subscribe(()=> this.goBack());
+  updateTim(tim: Tim) {
+    console.log(
+      tim.teamId +
+        ' ' +
+        tim.teamName +
+        ' ' +
+        tim.foundedYear +
+        ' ' +
+        tim.city +
+        ' ' +
+        tim.countryId
+    );
+    this.servis.updateTim(tim).subscribe(() => this.goBack());
   }
-  goBack():void {
+  goBack(): void {
     this.location.back();
   }
 }

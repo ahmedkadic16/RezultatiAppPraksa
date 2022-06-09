@@ -11,19 +11,19 @@
   left: 2%;
   margin-bottom: 2%;
 }
-#pretragaAdd input{
-  background-color: rgba(70,145,187,0.78);
+#pretragaAdd input {
+  background-color: rgba(70, 145, 187, 0.78);
   padding: 1%;
   border-radius: 25px;
   border-color: #457eab;
-  width:30%;
+  width: 30%;
 }
 #pretragaAdd button {
   position: relative;
   border-color: #457eab;
   left: 1%;
   border-radius: 25px;
-  background-color: rgba(70,145,187,0.78);
+  background-color: rgba(70, 145, 187, 0.78);
   padding: 1%;
   width: 45%;
   font-size: 90%;
@@ -40,49 +40,49 @@ ul li {
   list-style-type: none;
   border-bottom: 1px solid #457eab;
   font-size: 130%;
-  padding:1%;
+  padding: 1%;
 }
-ul a{
+ul a {
   width: 30%;
   text-decoration: none;
-  color:black;
+  color: black;
 }
 ul button {
-  float:right;
+  float: right;
   border-color: #457eab;
   border-radius: 25px;
   background-color: rgba(70, 145, 187, 0.78);
   width: 24.7%;
-  padding:3px;
+  padding: 3px;
   font-size: 85%;
 }
 #addnew {
   text-align: center;
-  color:white;
+  color: white;
   width: 30%;
   position: absolute;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   left: 50%;
-  top:1%;
-  padding:1% 3% 2% 3%;
+  top: 1%;
+  padding: 1% 3% 2% 3%;
 }
 #addnew input {
-  background-color: rgba(70,145,187,0.78);
+  background-color: rgba(70, 145, 187, 0.78);
   padding: 1%;
   border-radius: 25px;
   border-color: #457eab;
-  width:50%;
+  width: 50%;
 }
 #addnew button {
   border-color: #457eab;
   border-radius: 25px;
   background-color: rgba(70, 145, 187, 0.78);
   width: 60%;
-  padding:5px;
+  padding: 5px;
   font-size: 100%;
   margin-top: 3%;
-  color:black;
+  color: black;
 }
 ::placeholder {
-  color:black;
+  color: black;
 }

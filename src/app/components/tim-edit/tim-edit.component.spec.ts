@@ -8,9 +8,8 @@ describe('TimEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TimEditComponent ]
-    })
-    .compileComponents();
+      declarations: [TimEditComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
