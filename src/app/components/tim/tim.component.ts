@@ -11,8 +11,8 @@ import { TIMOVI } from '../../mock';
 })
 export class TimComponent implements OnInit {
   @Input() lista: Tim[] = [];
-  timovi = TIMOVI;
-  //timovi:Tim[] = [];
+  //timovi = TIMOVI;
+  timovi:Tim[] = [];
   selectedTim: any;
   constructor(
     public servisServis: ServisService,
@@ -39,6 +39,7 @@ export class TimComponent implements OnInit {
       .insertTim(this.selectedTim)
       .subscribe((x) => (this.selectedTim = x));
     console.log('team addess succesfully');
+    alert('Tim je uspjesno dodat');
     this.reloadCurrentRoute();
   }
   deleteTeam(id: number) {

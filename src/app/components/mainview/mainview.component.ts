@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Drzava } from '../../drzava';
+import {ActivatedRoute, Router} from '@angular/router';
 import { ServisService } from '../../services/servis.service';
-import { Tim } from '../../tim';
+import { Location} from "@angular/common";
 
 @Component({
   selector: 'app-mainview',
@@ -10,20 +9,22 @@ import { Tim } from '../../tim';
   styleUrls: ['./mainview.component.css'],
 })
 export class MainviewComponent implements OnInit {
-  id: number = 0;
-  lista: any;
-  constructor(private route: ActivatedRoute, private servis: ServisService) {}
+  lista?:any;
+
+  constructor(
+    private location:Location,
+    private activeRoute: ActivatedRoute,
+    private servis: ServisService,
+    private router: Router) {
+  }
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      //console.log(params);
-      //console.log(+params['id']);
-      this.id = params['id'];
-    });
-    console.log(this.id);
-    this.getTimovi(this.id);
+    this.getTimovi();
   }
-  getTimovi(id: number) {
-    this.servis.getTeamByCountryId(id).subscribe((x) => (this.lista = x));
+
+  getTimovi() {
+    this.activeRoute.params.subscribe(params => {
+      this.servis.getTeamByCountryId(params['id']).subscribe((x) => (this.lista = x));
+    });
   }
 }

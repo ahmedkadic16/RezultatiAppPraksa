@@ -50,6 +50,11 @@
 #sidenav li:hover {
   background-color: rgba(100, 159, 193, 0.55);
 }
+#sidenav a {
+  text-decoration: none;
+  color:black;
+}
+
 #main {
   position: absolute;
   width: 87.5%;
@@ -57,6 +62,8 @@
   top: 13%;
   left: 12.5%;
 }
+
+
 
 #footer {
   position: fixed;
@@ -81,3 +88,9 @@
   position: relative;
   left: 78%;
 }
+#sidenav {
+  overflow: auto;
+}
+#sidenav::-webkit-scrollbar {
+   display: none; /* for Chrome, Safari, and Opera */
+ }

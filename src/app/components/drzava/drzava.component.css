@@ -1,7 +1,7 @@
 #prikaz {
   margin: 1% 0% 0% 1%;
   padding: 0px;
-  height: 93%;
+  height: 83%;
   width: 97%;
 }
 #pretragaAdd {
@@ -10,6 +10,13 @@
   top: 1%;
   left: 2%;
   margin-bottom: 2%;
+}
+#listAdd {
+  height: 100%;
+  overflow: auto;
+}
+#listAdd::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 #pretragaAdd input {
   background-color: rgba(70, 145, 187, 0.78);
@@ -86,3 +93,4 @@ ul button {
 ::placeholder {
   color: black;
 }
+

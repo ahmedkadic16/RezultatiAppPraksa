@@ -18,6 +18,12 @@
   border-color: #457eab;
   width: 30%;
 }
+#listAdd {
+  overflow: auto;
+}
+#listAdd::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
 #pretragaAdd button {
   position: relative;
   border-color: #457eab;

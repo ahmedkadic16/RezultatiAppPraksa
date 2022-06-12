@@ -10,8 +10,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./drzava.component.css'],
 })
 export class DrzavaComponent implements OnInit {
-  //drzave:Drzava[] = [];
-  drzave = DRZAVE;
+  drzave:Drzava[] = [];
+  //drzave = DRZAVE;
   id: any;
   selectedDrzava?: Drzava;
   constructor(
@@ -30,9 +30,10 @@ export class DrzavaComponent implements OnInit {
     this.servisService.getDrzave().subscribe((x) => (this.drzave = x));
   }
   deleteDrzavaById(id: number) {
-    //this.drzave = this.drzave.filter(x=> x.countryId !== id);
+    this.drzave = this.drzave.filter(x=> x.countryId !== id);
     console.log('ID - ' + id);
     this.servisService.deleteDrzavaById(id).subscribe();
+    this.reloadCurrentRoute();
   }
   dodajNovuDrzavu() {
     this.selectedDrzava = {
@@ -41,9 +42,18 @@ export class DrzavaComponent implements OnInit {
     };
   }
   insertCountry(drzava: Drzava) {
+    let temp = drzava;
     this.servisService
       .insertDrzava(drzava)
       .subscribe((x) => (this.selectedDrzava = x));
-    console.log('iz drzave component gotovo');
+    console.log('Drzava addess succesfully');
+    alert('Drzava je uspjesno dodata');
+    this.reloadCurrentRoute();
+  }
+  reloadCurrentRoute() {
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
   }
 }

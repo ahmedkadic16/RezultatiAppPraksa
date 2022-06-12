@@ -5,8 +5,8 @@
     <button (click)="dodajNovuDrzavu()">Dodaj novu drzavu</button>
   </div>
 
-  <div id="listAdd">
-    <ul>
+  <div id="listAdd" >
+    <ul class="pagination">
       <li *ngFor="let d of drzave">
         <a routerLink="/detail/{{ d.countryId }}"> {{ d.countryName }} </a>
         <button (click)="deleteDrzavaById(d.countryId)">DELETE</button>

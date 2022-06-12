@@ -13,7 +13,7 @@
     <h4>Lista zemalja:</h4>
     <ul>
       <li *ngFor="let d of drzave">
-        <p>{{ d.countryName }}</p>
+        <p><a routerLink="/mainview/{{ d.countryId }}"> {{ d.countryName }} </a></p>
       </li>
     </ul>
   </div>
