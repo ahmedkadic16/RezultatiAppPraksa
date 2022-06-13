@@ -17,6 +17,7 @@ export class AppComponent {
     this.getDrzave();
   }
   getDrzave() {
-    this.servisServis.getDrzave().subscribe(x=>this.drzave=x);
+    this.drzave=DRZAVE;
+    //this.servisServis.getDrzave().subscribe(x=>this.drzave=x);
   }
 }

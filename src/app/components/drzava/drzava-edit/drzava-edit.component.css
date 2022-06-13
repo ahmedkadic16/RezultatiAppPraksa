@@ -1,0 +1,23 @@
+#prikaz {
+  margin: 1%;
+  font-size: 20px;
+}
+#prikaz input {
+  background-color: rgba(70, 145, 187, 0.78);
+  padding: 1%;
+  border-radius: 25px;
+  border-color: #457eab;
+  width: 10%;
+  font-size: 15px;
+}
+#prikaz button {
+  border-color: #457eab;
+  border-radius: 25px;
+  background-color: rgba(70, 145, 187, 0.78);
+  width: 15%;
+  padding: 13px;
+  font-size: 100%;
+  color: black;
+  margin:1%;
+}
+

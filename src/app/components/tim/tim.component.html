@@ -1,13 +1,13 @@
 <div id="prikaz">
   <div id="pretragaAdd">
     <label>Pretrazi: </label>
-    <input name="pretraga " type="text" placeholder="Naziv" />
+    <input name="pretraga" [(ngModel)]="teamName" type="search" placeholder="Naziv" />
     <button (click)="dodajNoviTim()">Dodaj novi tim</button>
   </div>
 
   <div id="listAdd">
     <ul>
-      <li *ngFor="let t of timovi">
+      <li *ngFor="let t of timovi | FilterTeam:teamName">
         <a routerLink="/timDetail/{{ t.teamId }}">{{ t.teamName }}</a>
         <button (click)="deleteTeam(t.teamId)">DELETE</button>
         <button routerLink="/timDetail/{{ t.teamId }}">Detalji</button>

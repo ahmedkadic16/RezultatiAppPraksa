@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Drzava } from '../../drzava';
+import { Drzava } from '../../../drzava';
 import { ActivatedRoute } from '@angular/router';
-import { ServisService } from '../../services/servis.service';
+import { ServisService } from '../../../services/servis.service';
 import { Location } from '@angular/common';
 
 @Component({
@@ -19,7 +19,7 @@ export class DrzavaEditComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getDrzavu();
+   this.getDrzavu();
   }
   getDrzavu(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));

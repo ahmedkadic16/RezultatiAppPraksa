@@ -1,9 +1,9 @@
 <div *ngIf="drzava">
-  <div>
+  <div id="prikaz">
     <h3>Drzava detalji:</h3>
     <p>Drzava ID: {{ drzava.countryId }}</p>
     <span>Naziv drzave:</span>
-    <input [(ngModel)]="drzava.countryName" placeholder="name" />
+    <input [(ngModel)]="drzava.countryName" placeholder="name" /> <br>
     <button (click)="updateDrzavu(drzava)">Promijeni Naziv</button>
   </div>
 </div>

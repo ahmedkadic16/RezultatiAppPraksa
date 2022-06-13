@@ -11,9 +11,9 @@ import { TIMOVI } from '../../mock';
 })
 export class TimComponent implements OnInit {
   @Input() lista: Tim[] = [];
-  //timovi = TIMOVI;
   timovi:Tim[] = [];
   selectedTim: any;
+  teamName='';
   constructor(
     public servisServis: ServisService,
     private route: ActivatedRoute,
@@ -24,7 +24,8 @@ export class TimComponent implements OnInit {
     this.getTimovi();
   }
   getTimovi(): void {
-    this.servisServis.getTimovi().subscribe((x) => (this.timovi = x));
+    this.timovi = TIMOVI;
+   // this.servisServis.getTimovi().subscribe((x) => (this.timovi = x));
   }
   dodajNoviTim() {
     this.selectedTim = {
@@ -52,5 +53,15 @@ export class TimComponent implements OnInit {
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate([currentUrl]);
     });
+  }
+
+  search() {
+    if(this.teamName!='') {
+      let temp = this.teamName.toLowerCase();
+      this.timovi=this.timovi.filter(x=> {return x.teamName.toLowerCase().match(temp)});
+    }
+    else {
+      this.ngOnInit();
+    }
   }
 }

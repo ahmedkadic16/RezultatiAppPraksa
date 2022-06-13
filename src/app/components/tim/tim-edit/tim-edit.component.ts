@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Tim } from '../../tim';
+import { Tim } from '../../../tim';
 import { ActivatedRoute } from '@angular/router';
-import { ServisService } from '../../services/servis.service';
+import { ServisService } from '../../../services/servis.service';
 import { Location } from '@angular/common';
 
 @Component({
@@ -26,18 +26,8 @@ export class TimEditComponent implements OnInit {
     this.servis.getTim(id).subscribe((x) => (this.tim = x));
   }
   updateTim(tim: Tim) {
-    console.log(
-      tim.teamId +
-        ' ' +
-        tim.teamName +
-        ' ' +
-        tim.foundedYear +
-        ' ' +
-        tim.city +
-        ' ' +
-        tim.countryId
-    );
     this.servis.updateTim(tim).subscribe(() => this.goBack());
+    alert("Uspjesno promijenuti podaci");
   }
   goBack(): void {
     this.location.back();

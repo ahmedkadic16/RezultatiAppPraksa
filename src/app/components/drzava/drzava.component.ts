@@ -10,9 +10,10 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./drzava.component.css'],
 })
 export class DrzavaComponent implements OnInit {
-  drzave:Drzava[] = [];
-  //drzave = DRZAVE;
+  //drzave:Drzava[] = [];
+  drzave:Drzava[]=[];
   id: any;
+  countryName='';
   selectedDrzava?: Drzava;
   constructor(
     public servisService: ServisService,
@@ -27,7 +28,8 @@ export class DrzavaComponent implements OnInit {
     this.selectedDrzava = drzava;
   }
   getDrzave() {
-    this.servisService.getDrzave().subscribe((x) => (this.drzave = x));
+     //this.servisService.getDrzave().subscribe((x) => (this.drzave = x));
+     return this.drzave=DRZAVE;
   }
   deleteDrzavaById(id: number) {
     this.drzave = this.drzave.filter(x=> x.countryId !== id);
@@ -42,7 +44,6 @@ export class DrzavaComponent implements OnInit {
     };
   }
   insertCountry(drzava: Drzava) {
-    let temp = drzava;
     this.servisService
       .insertDrzava(drzava)
       .subscribe((x) => (this.selectedDrzava = x));

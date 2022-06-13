@@ -44,7 +44,7 @@
 }
 #sidenav li {
   font-size: 105%;
-  padding: 1%;
+  padding: 0.001%;
   text-align: center;
 }
 #sidenav li:hover {
