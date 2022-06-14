@@ -1,7 +1,8 @@
 #Full {
   height: 100%;
   width: 100%;
-  background-image: url("https://cdn.wallpapersafari.com/44/93/z9YJw7.jpg");
+ /*background-image: url("https://cdn.wallpapersafari.com/44/93/z9YJw7.jpg");*/
+  background-image: url("extra/wallpaper.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -9,8 +10,11 @@
   position: absolute;
   margin: 2% 0% 0% 0%;
   background-color: rgba(0, 0, 0, 0.3);
-  padding: 1% 12% 1% 12%;
+  padding: 1% 13% 1% 12%;
   border-bottom: 1px solid rgba(70, 145, 187, 0.78);
+}
+#listaComp{
+  background-color: yellow;
 }
 #topMenu a {
   text-decoration: none;
@@ -47,8 +51,8 @@
   padding: 0.001%;
   text-align: center;
 }
-#sidenav li:hover {
-  background-color: rgba(100, 159, 193, 0.55);
+#sidenav a:hover {
+  border-bottom: 3px solid rgba(100, 159, 193);
 }
 #sidenav a {
   text-decoration: none;
@@ -62,8 +66,6 @@
   top: 13%;
   left: 12.5%;
 }
-
-
 
 #footer {
   position: fixed;
@@ -82,11 +84,11 @@
 }
 #footer p:nth-child(2) {
   position: relative;
-  left: 35%;
+  left: 30%;
 }
 #footer p:nth-child(3) {
   position: relative;
-  left: 78%;
+  left: 73%;
 }
 #sidenav {
   overflow: auto;

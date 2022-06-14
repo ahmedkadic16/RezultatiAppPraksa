@@ -1,0 +1,9 @@
+<div *ngIf="sport">
+  <div id="prikaz">
+    <h3>Sport detalji:</h3>
+    <p>Sport ID: {{ sport.sportsId }}</p>
+    <span>Naziv sporta:</span>
+    <input [(ngModel)]="sport.name" placeholder="name" /> <br>
+    <button (click)="updateSport(sport)">Promijeni Naziv</button>
+  </div>
+</div>

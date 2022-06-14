@@ -5,9 +5,13 @@ import { DrzavaEditComponent } from './components/drzava/drzava-edit/drzava-edit
 import { TimComponent } from './components/tim/tim.component';
 import { TimEditComponent } from './components/tim/tim-edit/tim-edit.component';
 import { MainviewComponent } from './components/mainview/mainview.component';
+import {SportComponent} from "./components/sport/sport.component";
+import {CompetitionsComponent} from "./components/competitions/competitions.component";
 
 const routes: Routes = [
   { path: 'drzava', component: DrzavaComponent },
+  { path: 'competitions', component: CompetitionsComponent },
+  { path: 'sport', component: SportComponent },
   { path: 'detail/:id', component: DrzavaEditComponent },
   { path: 'timDetail/:id', component: TimEditComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },

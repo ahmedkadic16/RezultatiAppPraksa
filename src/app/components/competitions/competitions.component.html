@@ -1,0 +1,38 @@
+<div id="prikaz">
+  <div id="pretragaAdd">
+    <label>Pretrazi: </label>
+    <input name="pretraga" [(ngModel)]=naziv type="search" placeholder="Naziv" />
+    <button (click)="dodajNoviComp()">Dodaj novo takmicenje</button>
+  </div>
+
+  <div id="listAdd" >
+    <ul class="pagination">
+      <li *ngFor="let c of competitions | FilterComp: naziv">
+        <a routerLink="/detail/{{ c.id }}"> {{ c.naziv }} </a>
+        <button (click)="deleteCompetitionById(c.id)">DELETE</button>
+        <button routerLink="/detail/{{ c.id }}">Detalji</button>
+      </li>
+    </ul>
+
+
+    <div *ngIf="selectedCompetition != null" id="addnew">
+      <div>
+        <h2>Dodavanje novog natjecanja!</h2>
+        <div class="red">
+          <label>Naziv natjecanja: </label>
+          <input [(ngModel)]="selectedCompetition.naziv" placeholder="naziv" />
+        </div>
+
+        <div class="red">
+          <label>Sport id</label>
+          <input [(ngModel)]="selectedCompetition.sportid" placeholder="sportId" />
+        </div>
+        <div class="red">
+          <label> Id zemlje</label>
+          <input [(ngModel)]="selectedCompetition.countryid" placeholder="id" />
+        </div>
+        <button class="normal" (click)="insertCompetition()">Sacuvaj</button>
+      </div>
+    </div>
+  </div>
+</div>

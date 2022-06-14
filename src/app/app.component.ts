@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { DRZAVE } from './mock';
+import { DRZAVE } from './extra/mock';
 import {ServisService} from "./services/servis.service";
-import {Drzava} from "./drzava";
+import {Drzava} from "./extra/drzava";
+import {Competition} from "./extra/competition";
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,20 @@ import {Drzava} from "./drzava";
 export class AppComponent {
   drzave:Drzava[] = [];
   title = 'Praksav192';
+  comp:Competition[] = [];
+  todayDate : Date = new Date();
   constructor(private servisServis:ServisService) {
   }
   ngOnInit(): void {
     this.getDrzave();
   }
   getDrzave() {
-    this.drzave=DRZAVE;
-    //this.servisServis.getDrzave().subscribe(x=>this.drzave=x);
+    //this.drzave=DRZAVE;
+    this.servisServis.getDrzave().subscribe(x=>this.drzave=x);
   }
+  getCompetitions(id:number) {
+   this.servisServis.getCompByCountryId(id).subscribe();
+  return this.comp;
+  }
+
 }

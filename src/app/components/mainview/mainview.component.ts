@@ -17,11 +17,9 @@ export class MainviewComponent implements OnInit {
     private servis: ServisService,
     private router: Router) {
   }
-
   ngOnInit() {
     this.getTimovi();
   }
-
   getTimovi() {
     this.activeRoute.params.subscribe(params => {
       this.servis.getTeamByCountryId(params['id']).subscribe((x) => (this.lista = x));

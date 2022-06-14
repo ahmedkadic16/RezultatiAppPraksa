@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Tim } from '../../tim';
+import { Tim } from '../../extra/tim';
 import { ServisService } from '../../services/servis.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TIMOVI } from '../../mock';
+import { TIMOVI } from '../../extra/mock';
 
 @Component({
   selector: 'app-tim',
@@ -24,8 +24,8 @@ export class TimComponent implements OnInit {
     this.getTimovi();
   }
   getTimovi(): void {
-    this.timovi = TIMOVI;
-   // this.servisServis.getTimovi().subscribe((x) => (this.timovi = x));
+   // this.timovi = TIMOVI;
+   this.servisServis.getTimovi().subscribe((x) => (this.timovi = x));
   }
   dodajNoviTim() {
     this.selectedTim = {
@@ -55,13 +55,4 @@ export class TimComponent implements OnInit {
     });
   }
 
-  search() {
-    if(this.teamName!='') {
-      let temp = this.teamName.toLowerCase();
-      this.timovi=this.timovi.filter(x=> {return x.teamName.toLowerCase().match(temp)});
-    }
-    else {
-      this.ngOnInit();
-    }
-  }
 }

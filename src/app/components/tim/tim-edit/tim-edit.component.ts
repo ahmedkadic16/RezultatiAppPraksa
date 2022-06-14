@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tim } from '../../../tim';
+import { Tim } from '../../../extra/tim';
 import { ActivatedRoute } from '@angular/router';
 import { ServisService } from '../../../services/servis.service';
 import { Location } from '@angular/common';

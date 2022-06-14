@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DRZAVE } from '../../mock';
-import { Drzava } from '../../drzava';
+import { DRZAVE } from '../../extra/mock';
+import { Drzava } from '../../extra/drzava';
 import { ServisService } from '../../services/servis.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
@@ -24,12 +24,9 @@ export class DrzavaComponent implements OnInit {
   ngOnInit(): void {
     this.getDrzave();
   }
-  onSelect(drzava: Drzava) {
-    this.selectedDrzava = drzava;
-  }
   getDrzave() {
-     //this.servisService.getDrzave().subscribe((x) => (this.drzave = x));
-     return this.drzave=DRZAVE;
+     this.servisService.getDrzave().subscribe((x) => (this.drzave = x));
+     //return this.drzave=DRZAVE;
   }
   deleteDrzavaById(id: number) {
     this.drzave = this.drzave.filter(x=> x.countryId !== id);
@@ -39,7 +36,7 @@ export class DrzavaComponent implements OnInit {
   }
   dodajNovuDrzavu() {
     this.selectedDrzava = {
-      countryId: 1,
+      countryId: 0,
       countryName: '',
     };
   }
@@ -51,6 +48,7 @@ export class DrzavaComponent implements OnInit {
     alert('Drzava je uspjesno dodata');
     this.reloadCurrentRoute();
   }
+
   reloadCurrentRoute() {
     const currentUrl = this.router.url;
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {

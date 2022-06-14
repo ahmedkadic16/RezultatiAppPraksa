@@ -1,0 +1,29 @@
+<div id="prikaz">
+  <div id="pretragaAdd">
+    <label>Pretrazi: </label>
+    <input name="pretraga" [(ngModel)]=name type="search" placeholder="Naziv" />
+    <button (click)="dodajNoviSport()">Dodaj novi sport</button>
+  </div>
+
+  <div id="listAdd" >
+    <ul class="pagination">
+      <li *ngFor="let s of sportovi | FilterSport: name">
+        <a routerLink="/detail/{{ s.sportsId }}"> {{ s.name }} </a>
+        <button (click)="deleteSportById(s.sportsId)">DELETE</button>
+        <button routerLink="/detail/{{ s.sportsId }}">Detalji</button>
+      </li>
+    </ul>
+
+    <div *ngIf="selectedSport != null" id="addnew">
+      <div>
+        <h2>Dodavanje novog sporta!</h2>
+        <label>Naziv Sporta: </label>
+        <input [(ngModel)]="selectedSport.name" placeholder="name" />
+        <br />
+        <button class="normal" (click)="insertSport(selectedSport)">
+          Sacuvaj
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

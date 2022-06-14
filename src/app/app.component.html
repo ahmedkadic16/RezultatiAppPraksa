@@ -3,10 +3,10 @@
     <a href="#"> Home</a>
     <a routerLink="/drzava">Drzave</a>
     <a routerLink="/timovi">Timovi</a>
-    <a routerLink="/">Test</a>
-    <a routerLink="/">Test2</a>
-    <a routerLink="/">Test3</a>
-    <a routerLink="/">Test4</a>
+    <a routerLink="/sport">Sportovi</a>
+    <a routerLink="/competitions">Takmicenja</a>
+    <a routerLink="/">TEST</a>
+
   </nav>
 
   <div id="sidenav">
@@ -14,8 +14,10 @@
     <ul>
       <li *ngFor="let d of drzave">
         <p><a routerLink="/mainview/{{ d.countryId }}"> {{ d.countryName }} </a></p>
-      </li>
-    </ul>
+
+          </li>
+
+        </ul>
   </div>
 
   <div id="main">
@@ -23,7 +25,7 @@
   </div>
 
   <div id="footer">
-    <p>Datum: 7.8.2022</p>
+    <p>Datum i vrijeme: {{todayDate | date:'short'}}</p>
     <p>Contact us at: email@email.com</p>
     <p>All rights reserved.</p>
   </div>

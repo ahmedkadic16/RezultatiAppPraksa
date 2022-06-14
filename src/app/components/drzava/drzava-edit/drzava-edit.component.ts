@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Drzava } from '../../../drzava';
+import { Drzava } from '../../../extra/drzava';
 import { ActivatedRoute } from '@angular/router';
 import { ServisService } from '../../../services/servis.service';
 import { Location } from '@angular/common';
