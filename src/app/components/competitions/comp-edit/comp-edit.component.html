@@ -1,0 +1,16 @@
+<div *ngIf="competition">
+  <div id="prikaz">
+    <h3>Competition detalji:</h3>
+    <p>Competition ID: {{ competition.id }}</p>
+    <span>Naziv competitiona: </span>
+    <input [(ngModel)]="competition.naziv" placeholder="name" /> <br />
+    <span>Zemlja id: </span>
+    <input [(ngModel)]="competition.countryid" placeholder="countryid" /> <br />
+
+    <span>Sport id: </span>
+    <input [(ngModel)]="competition.sportid" placeholder="sportid" /> <br />
+
+    <button >Promijeni podatke o timu</button>
+  </div>
+</div>
+

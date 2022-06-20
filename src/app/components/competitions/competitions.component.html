@@ -10,7 +10,7 @@
       <li *ngFor="let c of competitions | FilterComp: naziv">
         <a routerLink="/detail/{{ c.id }}"> {{ c.naziv }} </a>
         <button (click)="deleteCompetitionById(c.id)">DELETE</button>
-        <button routerLink="/detail/{{ c.id }}">Detalji</button>
+        <button routerLink="/comp-edit/{{ c.id }}">Detalji</button>
       </li>
     </ul>
 

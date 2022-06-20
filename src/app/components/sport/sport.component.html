@@ -10,7 +10,7 @@
       <li *ngFor="let s of sportovi | FilterSport: name">
         <a routerLink="/detail/{{ s.sportsId }}"> {{ s.name }} </a>
         <button (click)="deleteSportById(s.sportsId)">DELETE</button>
-        <button routerLink="/detail/{{ s.sportsId }}">Detalji</button>
+        <button routerLink="/sport/{{ s.sportsId }}">Detalji</button>
       </li>
     </ul>
 

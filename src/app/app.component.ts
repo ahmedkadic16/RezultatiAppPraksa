@@ -14,18 +14,14 @@ export class AppComponent {
   title = 'Praksav192';
   comp:Competition[] = [];
   todayDate : Date = new Date();
-  constructor(private servisServis:ServisService) {
+  panelOpenState=false;
+
+  constructor(private servisService:ServisService) {
   }
   ngOnInit(): void {
     this.getDrzave();
   }
   getDrzave() {
-    //this.drzave=DRZAVE;
-    this.servisServis.getDrzave().subscribe(x=>this.drzave=x);
-  }
-  getCompetitions(id:number) {
-   this.servisServis.getCompByCountryId(id).subscribe();
-  return this.comp;
-  }
-
+      this.servisService.getDrzave().subscribe((x) => (this.drzave = x));
+      this.servisService.getCompetitions().subscribe(x=>this.comp=x);}
 }

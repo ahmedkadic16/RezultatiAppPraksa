@@ -5,20 +5,33 @@
     <a routerLink="/timovi">Timovi</a>
     <a routerLink="/sport">Sportovi</a>
     <a routerLink="/competitions">Takmicenja</a>
-    <a routerLink="/">TEST</a>
-
+    <a routerLink="/test-area">testarea</a>
   </nav>
 
+
   <div id="sidenav">
-    <h4>Lista zemalja:</h4>
     <ul>
       <li *ngFor="let d of drzave">
-        <p><a routerLink="/mainview/{{ d.countryId }}"> {{ d.countryName }} </a></p>
-
-          </li>
-
-        </ul>
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{d.countryName}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul>
+              <li *ngFor="let t of comp | FilterTimovi:d.countryId">
+                <p id="nazivComp">{{t.naziv}}</p>
+              </li>
+            </ul>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </li>
+    </ul>
   </div>
+
+
 
   <div id="main">
     <router-outlet></router-outlet>

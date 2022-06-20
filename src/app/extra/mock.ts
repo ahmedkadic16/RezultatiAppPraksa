@@ -1,13 +1,20 @@
 import { Drzava } from './drzava';
 
 export const DRZAVE: Drzava[] = [
-  { countryId: 12, countryName: 'Bosna' },
-  { countryId: 17, countryName: 'Bosna1' },
-  { countryId: 18, countryName: 'Bosna2' },
-  { countryId: 19, countryName: 'Bosna3' },
-  { countryId: 20, countryName: 'Bosna4' },
-  { countryId: 13, countryName: 'Srbija' },
-  { countryId: 14, countryName: 'Hrvatska' },
+  { countryId: 12,
+    countryName: 'Bosna' },
+  { countryId: 17,
+    countryName: 'Bosna1' },
+  { countryId: 18,
+    countryName: 'Bosna2' },
+  { countryId: 19,
+    countryName: 'Bosna3' },
+  { countryId: 20,
+    countryName: 'Bosna4' },
+  { countryId: 13,
+    countryName: 'Srbija' },
+  { countryId: 14,
+    countryName: 'Hrvatska' },
   { countryId: 15, countryName: 'Zanzibar' },
   { countryId: 16, countryName: 'Paragvaj' },
 ];

@@ -1,0 +1,33 @@
+#prikaz {
+  height: 95%;
+  overflow: auto;
+  width: 70%;
+  margin:0px;
+  padding: 0px;
+}
+#prikaz::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+ul li {
+  list-style: none;
+}
+
+mat-expansion-panel {
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+
+}
+mat-panel-title {
+  font-weight: bold;
+} li{
+  font-weight: bold;
+}
+li:hover {
+  border-bottom: 1px solid black;
+  cursor:pointer;
+}
+mat-panel-description p{
+
+  position:absolute;
+  left:50%;
+}

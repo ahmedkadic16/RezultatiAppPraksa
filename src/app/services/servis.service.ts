@@ -24,8 +24,6 @@ export class ServisService {
 
   //SVE VEZANO ZA DRZAVE
   getDrzave(): Observable<Drzava[]> {
-    //const drzave = of(DRZAVE);
-    //return drzave;
     return this.httpKlijent.get<Drzava[]>(this.drzaveApi + 'GetAllCountries').
       pipe(catchError(this.handleError<Drzava[]>('getDrzave',[])));
   }
@@ -33,9 +31,6 @@ export class ServisService {
   getDrzavu(id: number): Observable<Drzava> {
     return this.httpKlijent.get<Drzava>(this.drzaveApi + 'GetCountryById/' + id).
       pipe(catchError(this.handleError<Drzava>('getDrzavu id=${id}')));
-
-    //const drzava = DRZAVE.find(x=>x.countryId === id)!;
-    //return of(drzava);
   }
 
   updateDrzava(drzava: Drzava): Observable<any> {

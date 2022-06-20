@@ -1,0 +1,22 @@
+<div id="prikaz">
+  <ul id="lista">
+    <li *ngFor="let c of competitions">
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+             <p> Prikazi dogadjaje</p>
+            </mat-panel-description>
+            <mat-panel-title>
+              {{ c.naziv }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>ovde treba ucitati dogadjaje</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </li>
+  </ul>
+</div>
