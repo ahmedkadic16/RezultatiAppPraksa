@@ -5,11 +5,13 @@
     <a routerLink="/timovi">Timovi</a>
     <a routerLink="/sport">Sportovi</a>
     <a routerLink="/competitions">Takmicenja</a>
-    <a routerLink="/test-area">testarea</a>
+    <a routerLink="/events">Events</a>
+    <a routerLink="/test">Testiranje</a>
   </nav>
 
 
   <div id="sidenav">
+    <h3>Lista zemalja:</h3>
     <ul>
       <li *ngFor="let d of drzave">
         <mat-accordion>
@@ -22,7 +24,7 @@
             </mat-expansion-panel-header>
             <ul>
               <li *ngFor="let t of comp | FilterTimovi:d.countryId">
-                <p id="nazivComp">{{t.naziv}}</p>
+                <a routerLink="/comp-details/{{ t.id }}"> {{ t.naziv }} </a>
               </li>
             </ul>
           </mat-expansion-panel>

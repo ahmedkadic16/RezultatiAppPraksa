@@ -1,7 +1,7 @@
 #prikaz {
   margin: 1% 0% 0% 1%;
   padding: 0px;
-  height: 93%;
+  height: 92%;
   width: 97%;
 }
 #pretragaAdd {
@@ -59,7 +59,7 @@ ul button {
   border-color: #457eab;
   border-radius: 25px;
   background-color: rgba(70, 145, 187, 0.78);
-  width: 24.7%;
+  width: 15.7%;
   padding: 3px;
   font-size: 85%;
 }

@@ -1,6 +1,11 @@
 <div id="prikaz">
+  <div id="pretragaAdd">
+    <label>Pretrazi: </label>
+    <input name="pretraga" [(ngModel)]=naziv type="search" placeholder="Naziv" />
+  </div>
+
   <ul id="lista">
-    <li *ngFor="let c of competitions">
+    <li *ngFor="let c of competitions | FilterComp:naziv">
       <mat-accordion>
         <mat-expansion-panel
           (opened)="panelOpenState = true"
@@ -8,7 +13,7 @@
         >
           <mat-expansion-panel-header>
             <mat-panel-description>
-             <p> Prikazi dogadjaje</p>
+              <p> Prikazi dogadjaje</p>
             </mat-panel-description>
             <mat-panel-title>
               {{ c.naziv }}

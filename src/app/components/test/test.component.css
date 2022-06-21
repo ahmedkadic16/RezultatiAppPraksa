@@ -1,0 +1,15 @@
+#prikaz {
+  margin-left: 3%;
+  height: 93%;
+  width: 80%;
+}
+.mat-sort-header-container {
+  align-items: center;
+}
+#prikaz {
+
+  overflow: auto;
+}
+#prikaz::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}

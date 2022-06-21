@@ -33,8 +33,8 @@
   background-color: rgba(169, 169, 169, 0.13);
   position: absolute;
   margin-left: 2.5%;
-  width: 10%;
-  height: 86%;
+  width: 12%;
+  height: 85%;
   top: 13%;
 }
 #sidenav h4 {
@@ -49,7 +49,8 @@
 #sidenav li {
   font-size: 105%;
   padding: 0.001%;
-  text-align: center;
+  text-align: left;
+  margin-left: 1%;
 }
 #sidenav a:hover {
   border-bottom: 3px solid rgba(100, 159, 193);
@@ -57,6 +58,7 @@
 #sidenav a {
   text-decoration: none;
   color:black;
+  font-size: 18px ;
 }
 
 #main {
@@ -73,9 +75,9 @@
   margin: 0px;
   padding: 0px;
   color: white;
-  font-size: 60%;
+  font-size: 65%;
   width: 100%;
-  top: 97%;
+  top: 98%;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.71);
 }
@@ -84,11 +86,11 @@
 }
 #footer p:nth-child(2) {
   position: relative;
-  left: 30%;
+  left: 35%;
 }
 #footer p:nth-child(3) {
   position: relative;
-  left: 73%;
+  left: 80%;
 }
 #sidenav {
   overflow: auto;

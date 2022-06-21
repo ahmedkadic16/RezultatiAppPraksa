@@ -42,11 +42,12 @@ export class CompetitionsComponent implements OnInit {
     this.reloadCurrentRoute();
   }
 
-  deleteCompetitionById(id:number) {
+  deleteCompetitionById(id: number) {
+    this.competitions = this.competitions.filter(x=> x.id !== id);
+    console.log('ID - ' + id);
     this.servisServis.deleteCompetitionById(id).subscribe();
     this.reloadCurrentRoute();
   }
-
   reloadCurrentRoute() {
     const currentUrl = this.router.url;
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {

@@ -11,7 +11,7 @@ import { MatExpansionModule} from "@angular/material/expansion";
 
 import { TimComponent } from './components/tim/tim.component';
 import { TimEditComponent } from './components/tim/tim-edit/tim-edit.component';
-import { MainviewComponent } from './components/test-area/mainview.component';
+
 import { SportComponent } from './components/sport/sport.component';
 import { SportEditComponent } from './components/sport/sport-edit/sport-edit.component';
 import { CompetitionsComponent } from './components/competitions/competitions.component';
@@ -22,8 +22,11 @@ import {FilterTeam} from "./filteri/filter-team.pipe";
 import {FilterComp} from "./filteri/filter-comp.pipe";
 import { FilterTimovi } from "./filteri/filter-timovi.pipe";
 import { CompEditComponent } from './components/competitions/comp-edit/comp-edit.component';
-
-
+import { CompDetailsComponent } from './components/competitions/comp-details/comp-details.component';
+import { EventsComponent } from './components/events/events.component';
+import { TestComponent } from './components/test/test.component';
+import {MatSortModule} from '@angular/material/sort';
+import { MatTableModule } from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -32,7 +35,6 @@ import { CompEditComponent } from './components/competitions/comp-edit/comp-edit
     DrzavaEditComponent,
     TimComponent,
     TimEditComponent,
-    MainviewComponent,
     FilterDrzava,
     FilterTeam,
     FilterSport,
@@ -42,6 +44,9 @@ import { CompEditComponent } from './components/competitions/comp-edit/comp-edit
     SportEditComponent,
     CompetitionsComponent,
     CompEditComponent,
+    CompDetailsComponent,
+    EventsComponent,
+    TestComponent,
 
   ],
   imports: [
@@ -50,7 +55,9 @@ import { CompEditComponent } from './components/competitions/comp-edit/comp-edit
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSortModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

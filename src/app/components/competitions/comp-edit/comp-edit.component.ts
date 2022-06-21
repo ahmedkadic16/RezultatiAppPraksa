@@ -16,7 +16,6 @@ export class CompEditComponent implements OnInit {
   constructor(
     private servis: ServisService,
     private route: ActivatedRoute,
-    private location: Location
   ) {}
 
   ngOnInit(): void {

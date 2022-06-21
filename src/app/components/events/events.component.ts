@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ServisService } from '../../services/servis.service';
-import { Drzava } from '../../extra/drzava';
 import { Competition } from "../../extra/competition";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-  selector: 'app-test-area',
-  templateUrl: './mainview.component.html',
-  styleUrls: ['./mainview.component.css'],
+  selector: 'app-events',
+  templateUrl: './events.component.html',
+  styleUrls: ['./events.component.css'],
 })
-export class MainviewComponent implements OnInit {
+export class EventsComponent implements OnInit {
   competitions: Competition[] = [];
   panelOpenState = false;
-
-  constructor(private servisService: ServisService) {}
+  naziv:any;
+  constructor(private servisService: ServisService,
+              private route: ActivatedRoute,
+              private router: Router) {}
 
   ngOnInit() {
     this.getComp();
@@ -20,6 +22,5 @@ export class MainviewComponent implements OnInit {
   getComp() {
     this.servisService.getCompetitions().subscribe((x) => (this.competitions = x));
   }
-
 }
 

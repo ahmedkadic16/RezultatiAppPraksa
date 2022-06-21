@@ -1,0 +1,12 @@
+<div id="prikaz">
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="name">Naziv</th>
+      <th mat-sort-header="calories">Id</th>
+    </tr>
+    <tr *ngFor="let d of sortedData">
+      <td>{{d.countryName}}</td>
+      <td>{{d.countryId}}</td>
+    </tr>
+  </table>
+</div>

@@ -20,14 +20,23 @@ mat-expansion-panel {
 mat-panel-title {
   font-weight: bold;
 } li{
-  font-weight: bold;
-}
+    font-weight: bold;
+  }
 li:hover {
   border-bottom: 1px solid black;
   cursor:pointer;
 }
 mat-panel-description p{
-
   position:absolute;
   left:50%;
+}
+#pretragaAdd {
+  margin-left: 3.3%;
+}
+#pretragaAdd input {
+  background-color: rgba(70, 145, 187, 0.2);
+  padding: 1%;
+  border-radius: 25px;
+  border-color: #457eab;
+  width: 30%;
 }
