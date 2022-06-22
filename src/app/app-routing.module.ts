@@ -13,6 +13,7 @@ import { CompDetailsComponent } from "./components/competitions/comp-details/com
 import { EventsComponent } from "./components/events/events.component"
 import { TestComponent } from "./components/test/test.component";
 import { EventDetailsComponent } from "./components/events/event-details/event-details.component";
+import { EventAddComponent } from "./components/events/event-add/event-add.component";
 
 const routes: Routes = [
   { path: 'drzava', component: DrzavaComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'timDetail/:id', component: TimEditComponent },
   { path: 'timovi', component: TimComponent },
   { path: 'events', component: EventsComponent},
+  { path: 'event-add', component: EventAddComponent},
   { path: 'event-detail/:id', component: EventDetailsComponent },
   { path: 'test', component: TestComponent},
 

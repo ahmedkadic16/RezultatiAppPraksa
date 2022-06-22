@@ -13,9 +13,12 @@ export class EventsComponent implements OnInit {
   events:Event[] = [];
   panelOpenState = false;
   naziv:any;
+
+
   constructor(private servisService: ServisService,
               private route: ActivatedRoute,
               private router: Router) {}
+
 
   ngOnInit() {
     this.getComp();

@@ -27,8 +27,13 @@
           <input [(ngModel)]="selectedTim.city" placeholder="grad" />
         </div>
         <div class="red">
-          <label> Id zemlje</label>
-          <input [(ngModel)]="selectedTim.countryId" placeholder="id" />
+          <label>Zemlja:</label>
+          <mat-form-field appearance="fill">
+            <mat-label>Izaberi drzavu</mat-label>
+            <mat-select [(ngModel)]="selectedTim.countryId">
+              <mat-option *ngFor="let d of drzave" value="{{d.countryId}}">{{d.countryName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="red">
           <label>Godina osnivanja </label>

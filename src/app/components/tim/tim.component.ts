@@ -3,6 +3,7 @@ import { Tim } from '../../extra/tim';
 import { ServisService } from '../../services/servis.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TIMOVI } from '../../extra/mock';
+import { Drzava } from "../../extra/drzava";
 
 @Component({
   selector: 'app-tim',
@@ -11,6 +12,7 @@ import { TIMOVI } from '../../extra/mock';
 })
 export class TimComponent implements OnInit {
   @Input() lista: Tim[] = [];
+  drzave:Drzava[] = [];
   timovi:Tim[] = [];
   selectedTim: any;
   teamName='';
@@ -26,6 +28,7 @@ export class TimComponent implements OnInit {
   getTimovi(): void {
    // this.timovi = TIMOVI;
    this.servisServis.getTimovi().subscribe((x) => (this.timovi = x));
+   this.servisServis.getDrzave().subscribe(x=>this.drzave=x);
   }
   dodajNoviTim() {
     this.selectedTim = {

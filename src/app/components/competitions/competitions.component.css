@@ -100,3 +100,10 @@ h2 {
 ::placeholder {
   color: black;
 }
+mat-form-field {
+  background-color: rgba(70, 145, 187, 0.78);
+  padding: 1%;
+  border-radius: 25px;
+  border-color: #457eab;
+  width: 50%;
+}

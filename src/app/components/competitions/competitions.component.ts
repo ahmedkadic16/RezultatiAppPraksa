@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Competition} from "../../extra/competition";
 import {ServisService} from "../../services/servis.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import { Drzava } from "../../extra/drzava";
+import { Sport } from "../../extra/sport";
 
 @Component({
   selector: 'app-competitions',
@@ -10,8 +12,12 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class CompetitionsComponent implements OnInit {
   competitions:Competition[] = [];
+  drzave:Drzava[] = [];
+  sportovi:Sport[] = [];
   selectedCompetition:any;
   naziv:string='';
+  sportid:any;
+  countryid:any;
 
   constructor(
     public servisServis: ServisService,
@@ -21,24 +27,28 @@ export class CompetitionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCompetitions();
+    this.getDrzave();
   }
 
   getCompetitions() {
     this.servisServis.getCompetitions().subscribe(x=>this.competitions=x);
   }
-
+  getDrzave() {
+    this.servisServis.getDrzave().subscribe(x=>this.drzave=x);
+    this.servisServis.getSportovi().subscribe(x=>this.sportovi=x);
+  }
   dodajNoviComp() {
     this.selectedCompetition = {
       naziv:'',
-      sportid:null,
-      countryid:null,
+      sportid:this.sportid,
+      countryid:this.countryid,
     }
   }
   insertCompetition() {
     this.servisServis.insertCompetition(this.selectedCompetition).
     subscribe(x=>this.selectedCompetition=x);
     console.log('Competition added succesfully');
-    alert('Competition je uspjesno dodat');
+    alert(this.selectedCompetition.naziv + " " + this.selectedCompetition.sportid + " " + this.selectedCompetition.countryid);
     this.reloadCurrentRoute();
   }
 

@@ -21,14 +21,22 @@ import {FilterDrzava} from "./filteri/filter-drzava.pipe";
 import {FilterTeam} from "./filteri/filter-team.pipe";
 import {FilterComp} from "./filteri/filter-comp.pipe";
 import { FilterTimovi } from "./filteri/filter-timovi.pipe";
+import { FilterEvents } from "./filteri/filter-events.pipe";
+
 import { CompEditComponent } from './components/competitions/comp-edit/comp-edit.component';
 import { CompDetailsComponent } from './components/competitions/comp-details/comp-details.component';
 import { EventsComponent } from './components/events/events.component';
 import { TestComponent } from './components/test/test.component';
+import { EventDetailsComponent } from './components/events/event-details/event-details.component';
+
 import {MatSortModule} from '@angular/material/sort';
 import { MatTableModule } from "@angular/material/table";
-import { EventDetailsComponent } from './components/events/event-details/event-details.component';
-import { FilterEvents } from "./filteri/filter-events.pipe";
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { EventAddComponent } from './components/events/event-add/event-add.component';
+
 
 @NgModule({
   declarations: [
@@ -51,6 +59,7 @@ import { FilterEvents } from "./filteri/filter-events.pipe";
     EventsComponent,
     TestComponent,
     EventDetailsComponent,
+    EventAddComponent,
 
   ],
   imports: [
@@ -61,7 +70,11 @@ import { FilterEvents } from "./filteri/filter-events.pipe";
     BrowserAnimationsModule,
     MatExpansionModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

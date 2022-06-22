@@ -48,3 +48,11 @@ a {
   margin:0px;
   color:black;
 }
+button {
+  border-color: #457eab;
+  border-radius: 25px;
+  background-color: rgba(70, 145, 187, 0.78);
+  width: 24.7%;
+  padding: 1%;
+  font-size: 85%;
+}
