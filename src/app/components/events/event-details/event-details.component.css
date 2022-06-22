@@ -1,0 +1,25 @@
+#prikaz {
+  padding: 0px;
+  margin-left: 3%;
+  height: 93%;
+  width: 35%;
+  position: relative;
+  top: 1%;
+  left: 3%;
+  text-align: center;
+}
+#domacistat p {
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+#domacistat{
+  width: 100%;
+}
+#footer {
+  display:flex;
+  padding: 0px;
+  margin: 0px;
+}

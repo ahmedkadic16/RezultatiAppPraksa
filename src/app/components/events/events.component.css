@@ -40,3 +40,11 @@ mat-panel-description p{
   border-color: #457eab;
   width: 30%;
 }
+a {
+  text-decoration: none;
+}
+#event ul, li, a {
+  padding: 0px;
+  margin:0px;
+  color:black;
+}

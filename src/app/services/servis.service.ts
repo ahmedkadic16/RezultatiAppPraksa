@@ -7,7 +7,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { catchError} from 'rxjs/operators';
 import {Sport} from "../extra/sport";
 import {Competition} from "../extra/competition";
-
+import {Event} from "../extra/event"
 @Injectable({
   providedIn: 'root',
 })
@@ -16,6 +16,7 @@ export class ServisService {
   private timoviApi = 'http://192.168.43.22:6969/Teams/';
   private sportoviApi = 'http://192.168.43.22:6969/Sport/';
   private competitionsApi = 'http://192.168.43.22:6969/Competition/';
+  private eventsApi= 'http://192.168.43.22:6969/Event/'
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -154,6 +155,23 @@ export class ServisService {
   getCompByCountryId(id:number):Observable<Competition[]> {
     return this.httpKlijent.get<Competition[]>(this.competitionsApi+"GetAllCompetitions?countryid="+id);
   }
+  getEvents():Observable<Event[]> {
+    return this.httpKlijent.get<Event[]>(this.eventsApi+"GetAllEvents").pipe(
+      catchError(this.handleError<Event[]>('getEvents')));
+  }
+  getEventById(id:number):Observable<Event> {
+    return this.httpKlijent.get<Event>(this.eventsApi+"GetEventById/"+id).pipe(
+      catchError(this.handleError<Event>('getEventById id=${id}')));
+  }
+  insertEvent(event:Event):Observable<Event> {
+    return this.httpKlijent.post<Event>(this.eventsApi+"InsertEvent",event,this.httpOptions).
+    pipe(catchError(this.handleError<Event>('insertEvent')));
+  }
+
+
+
+
+
   //ERROR HANDLER generic
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

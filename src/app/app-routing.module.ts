@@ -12,6 +12,7 @@ import { PreloadAllModules } from '@angular/router';
 import { CompDetailsComponent } from "./components/competitions/comp-details/comp-details.component";
 import { EventsComponent } from "./components/events/events.component"
 import { TestComponent } from "./components/test/test.component";
+import { EventDetailsComponent } from "./components/events/event-details/event-details.component";
 
 const routes: Routes = [
   { path: 'drzava', component: DrzavaComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'timDetail/:id', component: TimEditComponent },
   { path: 'timovi', component: TimComponent },
   { path: 'events', component: EventsComponent},
+  { path: 'event-detail/:id', component: EventDetailsComponent },
   { path: 'test', component: TestComponent},
 
   { path: '', redirectTo: '/', pathMatch: 'full' },

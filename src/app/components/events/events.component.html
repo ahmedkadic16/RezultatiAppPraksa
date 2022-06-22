@@ -1,11 +1,16 @@
 <div id="prikaz">
   <div id="pretragaAdd">
     <label>Pretrazi: </label>
-    <input name="pretraga" [(ngModel)]=naziv type="search" placeholder="Naziv" />
+    <input
+      name="pretraga"
+      [(ngModel)]="naziv"
+      type="search"
+      placeholder="Naziv"
+    />
   </div>
 
   <ul id="lista">
-    <li *ngFor="let c of competitions | FilterComp:naziv">
+    <li *ngFor="let c of competitions | FilterComp: naziv">
       <mat-accordion>
         <mat-expansion-panel
           (opened)="panelOpenState = true"
@@ -13,13 +18,25 @@
         >
           <mat-expansion-panel-header>
             <mat-panel-description>
-              <p> Prikazi dogadjaje</p>
+              <p>Prikazi dogadjaje</p>
             </mat-panel-description>
             <mat-panel-title>
               {{ c.naziv }}
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <p>ovde treba ucitati dogadjaje</p>
+          <ul>
+            <li *ngFor="let e of events | FilterEvents:c.id">
+              <div id="event">
+                <a routerLink="/event-detail/{{ e.eventId }}">
+                  <p>Vrijeme pocetka: {{ e.eventStartTime | date: "short" }}</p>
+                  <p>
+                    {{ e.eventStatus }} {{ e.homeTeam }} {{ e.result }}
+                    {{ e.awayTeam }}
+                  </p>
+                </a>
+              </div>
+            </li>
+          </ul>
         </mat-expansion-panel>
       </mat-accordion>
     </li>

@@ -4,3 +4,14 @@
   height: 83%;
   width: 97%;
 }
+a {
+  text-decoration: none;
+  color:black;
+  font-size: 18px;
+}
+li {
+  list-style-type: none;
+  border-bottom: 1px solid #457eab;
+  width: 42%;
+}
+

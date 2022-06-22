@@ -3,4 +3,16 @@
     <h2>Naziv takmicenja: {{comp.naziv}}</h2>
     <h3>Zemlja iz koje dolazi: {{getDataText(comp.countryid)}}</h3>
   </div>
+  <ul>
+    <h2>Eventi unutar ovog competitiona:</h2>
+    <li *ngFor="let e of events | FilterEvents:comp.id">
+      <div id="event">
+        <a routerLink="/event-detail/{{ e.eventId }}">
+          <p>
+            {{ e.eventStartTime | date: "short" }} {{ e.eventStatus }} {{ e.homeTeam }} {{ e.result }}   {{ e.awayTeam }}
+          </p>
+        </a>
+      </div>
+    </li>
+  </ul>
 </div>

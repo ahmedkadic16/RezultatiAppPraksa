@@ -27,6 +27,8 @@ import { EventsComponent } from './components/events/events.component';
 import { TestComponent } from './components/test/test.component';
 import {MatSortModule} from '@angular/material/sort';
 import { MatTableModule } from "@angular/material/table";
+import { EventDetailsComponent } from './components/events/event-details/event-details.component';
+import { FilterEvents } from "./filteri/filter-events.pipe";
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { MatTableModule } from "@angular/material/table";
     FilterSport,
     FilterComp,
     FilterTimovi,
+    FilterEvents,
     SportComponent,
     SportEditComponent,
     CompetitionsComponent,
@@ -47,6 +50,7 @@ import { MatTableModule } from "@angular/material/table";
     CompDetailsComponent,
     EventsComponent,
     TestComponent,
+    EventDetailsComponent,
 
   ],
   imports: [

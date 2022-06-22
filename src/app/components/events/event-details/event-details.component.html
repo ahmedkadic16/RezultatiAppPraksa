@@ -1,0 +1,17 @@
+<div id="prikaz" *ngIf="event">
+  <div id="header">
+    <p>Vrijeme pocetka eventa: {{event.eventStartTime | date:"short"}}</p>
+    <p>{{event.eventStatus}}</p>
+    <h2>
+      {{event.homeTeam}} - {{event.result}} - {{event.awayTeam}}
+    </h2>
+  </div>
+  <div id="footer">
+    <div id="domacistat">
+      <p>Zuti Kartoni</p>
+      <p>{{event.yellowCardsHomeTeam}} - {{event.yellowCardsAwayTeam}}</p>
+      <p>Crveni Kartoni</p>
+      <p>{{event.redCardsHomeTeam}} - {{event.redCardsAwayTeam}}</p>
+    </div>
+  </div>
+</div>
