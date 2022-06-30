@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule} from "@angular/material/expansion";
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { TimComponent } from './components/tim/tim.component';
 import { TimEditComponent } from './components/tim/tim-edit/tim-edit.component';
@@ -36,6 +37,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { EventAddComponent } from './components/events/event-add/event-add.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -74,7 +77,7 @@ import { EventAddComponent } from './components/events/event-add/event-add.compo
     MatSelectModule,
     MatFormFieldModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

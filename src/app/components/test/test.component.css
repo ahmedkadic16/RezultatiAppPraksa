@@ -1,5 +1,21 @@
 #prikaz {
-  margin-left: 3%;
-  height: 93%;
-  width: 80%;
+  height: 95%;
+  overflow: auto;
+  width: 70%;
+  margin:0px;
+  padding: 0px;
+}
+:host {
+  display: block;
+  margin-top: 1rem;
+  margin-left:3rem;
+}
+
+.open-close-container {
+  border: 1px solid #dddddd;
+  margin-top: 1em;
+  padding: 20px 20px 0px 20px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 20px;
 }

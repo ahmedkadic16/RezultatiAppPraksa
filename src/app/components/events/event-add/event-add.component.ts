@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Event} from '../../../extra/event'
+import { ServisService } from "../../../services/servis.service";
+import { Competition } from "../../../extra/competition";
 @Component({
   selector: 'app-event-add',
   templateUrl: './event-add.component.html',
@@ -7,20 +9,24 @@ import { Event} from '../../../extra/event'
 })
 export class EventAddComponent implements OnInit {
   event:any;
-  constructor() { }
+  constructor(private servisServis:ServisService) { }
+  competitions:Competition[] = [];
+
+
 
   ngOnInit(): void {
     this.loadEvent();
+    this.getComps();
   }
   loadEvent() {
     this.event = {
-      eventId: 0,
+      eventId: null,
         eventName:"",
-        competitionId:0,
+        competitionId:null,
         eventStartTime:new Date(),
         eventStatus:"",
         eventPeriod: "",
-      result:"",
+      result:"0-0",
       homeTeam:"",
       awayTeam:"",
       yellowCardsHomeTeam:0,
@@ -28,5 +34,8 @@ export class EventAddComponent implements OnInit {
       redCardsHomeTeam: 0,
       redCardsAwayTeam: 0
     }
+  }
+  getComps() {
+    this.servisServis.getCompetitions().subscribe(x=>this.competitions=x);
   }
 }

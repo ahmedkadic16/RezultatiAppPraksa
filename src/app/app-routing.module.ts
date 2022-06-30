@@ -29,15 +29,15 @@ const routes: Routes = [
   { path: 'event-add', component: EventAddComponent},
   { path: 'event-detail/:id', component: EventDetailsComponent },
   { path: 'test', component: TestComponent},
-
   { path: '', redirectTo: '/', pathMatch: 'full' },
+  {
+    path:'auth',
+    loadChildren: () => import('./auth/auth-module').then(m => m.default)
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,
-    {
-      preloadingStrategy: PreloadAllModules
-    })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

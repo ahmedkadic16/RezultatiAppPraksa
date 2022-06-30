@@ -1,3 +1,20 @@
-<div id="prikaz">
+<div *ngFor="let c of competitions | FilterComp: naziv">
+      <mat-expansion-panel
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+            {{ c.naziv }}
+        </mat-expansion-panel-header>
+            <div id="event" *ngFor="let e of events | FilterEvents:c.id">
+              <a routerLink="/event-detail/{{ e.eventId }}">
+                <p>Vrijeme pocetka: {{ e.eventStartTime | date: "short" }}</p>
+                <p>
+                  {{ e.eventStatus }} {{e.eventPeriod}} {{ e.homeTeam }} {{ e.result }}
+                  {{ e.awayTeam }}
+                </p>
+              </a>
+            </div>
+      </mat-expansion-panel>
+  </div>
 
-</div>

@@ -20,9 +20,6 @@
           (closed)="panelOpenState = false"
         >
           <mat-expansion-panel-header>
-            <mat-panel-description>
-              <p>Prikazi dogadjaje</p>
-            </mat-panel-description>
             <mat-panel-title>
               {{ c.naziv }}
             </mat-panel-title>
@@ -33,7 +30,7 @@
                 <a routerLink="/event-detail/{{ e.eventId }}">
                   <p>Vrijeme pocetka: {{ e.eventStartTime | date: "short" }}</p>
                   <p>
-                    {{ e.eventStatus }} {{ e.homeTeam }} {{ e.result }}
+                    {{ e.eventStatus }} {{e.eventPeriod}} {{ e.homeTeam }} {{ e.result }}
                     {{ e.awayTeam }}
                   </p>
                 </a>

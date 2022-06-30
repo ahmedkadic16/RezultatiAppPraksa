@@ -2,8 +2,32 @@
   <div id="listAdd">
     <div class="red">
       <label>Event name</label>
-      <input [(ngModel)]="event.eventName" placeholder="grad" />
+      <input [(ngModel)]="event.eventName" placeholder="name" />
     </div>
-
+    <div class="red">
+      <label>Competition:</label>
+      <mat-form-field appearance="fill">
+        <mat-label>Izaberi competition</mat-label>
+        <mat-select [(ngModel)]="event.competitionId">
+          <mat-option *ngFor="let d of competitions" value="{{d.id}}">{{d.naziv}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="red">
+      <label>Datum</label>
+      <input [(ngModel)]="event.eventStartTime" placeholder="eventStart" />
+    </div>
+    <div class="red">
+      <label>status</label>
+      <input [(ngModel)]="event.eventStatus" placeholder="eventStatus" />
+    </div>
+    <div class="red">
+      <label>Home team</label>
+      <input [(ngModel)]="event.homeTeam" placeholder="homeTeam" />
+    </div>
+    <div class="red">
+      <label>Away team</label>
+      <input [(ngModel)]="event.awayTeam" placeholder="AWAYTEAM" />
+    </div>
    </div>
 </div>
